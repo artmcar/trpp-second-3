@@ -1,9 +1,10 @@
-package ru.mirea.trpp_second_3.controllers;
+package ru.mirea.trppsecond3.controllers;
 
 import com.opencsv.bean.CsvToBeanBuilder;
+import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
-import ru.mirea.trpp_second_3.entity.Client;
+import ru.mirea.trppsecond3.entity.Client;
 
 import java.io.InputStreamReader;
 import java.util.List;
@@ -18,7 +19,9 @@ public class ClientController {
 
     /** Конструктор. */
     public ClientController() {
-        clientList = new CsvToBeanBuilder<Client>(new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv"))).withType(Client.class).build().parse();
+        clientList = new CsvToBeanBuilder<Client>(
+                new InputStreamReader(this.getClass().getResourceAsStream("/MOCK_DATA.csv")
+                )).withType(Client.class).build().parse();
     }
 
     /**

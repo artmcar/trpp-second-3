@@ -24,18 +24,19 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
     compileOnly 'org.projectlombok:lombok:1.18.18'
 
+    implementation 'com.opencsv:opencsv:5.8'
     implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut:micronaut-http-client")
     implementation("javax.annotation:javax.annotation-api")
-    implementation("org.apache.logging.log4j:log4j-core:2.12.1")
+    implementation('org.apache.logging.log4j:log4j-core:2.12.1')
     runtimeOnly("org.apache.logging.log4j:log4j-api:2.12.1")
     runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.12.1")
 }
 
 
 application {
-    mainClass.set("ru.mirea.Application")
+    mainClass.set("ru.mirea.trppsecond3.Application")
 }
 
 java {
@@ -64,7 +65,7 @@ javadoc {
 shadowJar {
     archivesBaseName = "${project.name}"
     libsDirName = "${project.name}"
-    classifier('')
+    archiveClassifier.set('Makaryan')
 }
 
 checkstyle {
